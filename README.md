@@ -1,28 +1,21 @@
-# Template Bevy project with WebGL enabled
+# Template Bevy project with WebGL enabled (Upgraded to Bevy 0.7)
 
 ## Prerequisites
 
 ```
-cargo install cargo-make
+rustup components add wasm32-unknown-unknown
 ```
+
+cargo install --locked trunk
 
 ## Build and serve WASM version
 
-Set your local ip address in `Makefile.toml` (`localhost` will work if you want to connect to your own device)
-```toml
-[tasks.serve]
-command = "basic-http-server"
-args = ["-x", "-a", "<your-ip>:4000"]
-dependencies = ["build-web", "basic-http-server"]
 ```
-
+trunk serve
 ```
-cargo make serve
-```
-then point your browser to http://<your-ip>:4000/
-
+then point your browser to http://0.0.0.0:8080/
 
 ## Build and run native version
 ```
-cargo make run
+cargo run
 ```
